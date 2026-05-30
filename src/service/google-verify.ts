@@ -1,5 +1,8 @@
 import { type Profile } from "passport";
-import { Strategy as GoogleStrategy, type VerifyCallback } from "passport-google-oauth20";
+import {
+    Strategy as GoogleStrategy,
+    type VerifyCallback,
+} from "passport-google-oauth20";
 
 import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from "#config/key.js";
 import { User } from "#models/user.js";
@@ -35,7 +38,7 @@ async function googleVerify(
 
 export const googleStrategy = new GoogleStrategy(
     {
-        callbackURL: "http://localhost:3000/auth/google/callback",
+        callbackURL: "https://server-unqs.onrender.com/auth/google/callback",
         clientID: GOOGLE_CLIENT_ID,
         clientSecret: GOOGLE_CLIENT_SECRET,
     },
