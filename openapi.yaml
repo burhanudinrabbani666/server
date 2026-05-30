@@ -1,0 +1,15 @@
+openapi: 3.0.2
+
+info:
+    title: Server
+    version: 1.0.0
+
+paths:
+    "/":
+        get:
+            summary: Root endpoint
+            description: Root endpoint
+
+            responses:
+                "200":
+                    description: Success get data
