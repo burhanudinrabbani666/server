@@ -3,14 +3,15 @@ import express from "express";
 import session from "express-session";
 import mongoose from "mongoose";
 import passport from "passport";
+import "dotenv/config";
 
+// index.ts - paling atas
 import { MONGO_DB_URI, PORT, SESSION_SECRET } from "#config/key.js";
 import { googleAuthRoutes } from "#routes/auth.route.js";
 import { apiRoutes } from "#routes/root.routes.js";
 import { googleStrategy } from "#service/google-verify.js";
 import "#service/passport.session.js";
 
-console.log("Node version:", process.version);
 const app = express();
 await mongoose.connect(MONGO_DB_URI, {
     dbName: "emily_nodejs",

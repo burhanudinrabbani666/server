@@ -1,6 +1,7 @@
-import dotenv from "dotenv";
-
-dotenv.config();
+if (process.env["NODE_ENV"] !== "production") {
+    const { default: dotenv } = await import("dotenv");
+    dotenv.config({ path: `.env.${process.env["NODE_ENV"] ?? "development"}` });
+}
 
 function requireEnv(key: string): string {
     const value = process.env[key];
