@@ -12,6 +12,10 @@ import { apiRoutes } from "#routes/root.routes.js";
 import { googleStrategy } from "#service/google-verify.js";
 import "#service/passport.session.js";
 
+console.log(PORT);
+console.log(MONGO_DB_URI);
+console.log(SESSION_SECRET);
+
 const app = express();
 await mongoose.connect(MONGO_DB_URI, {
     dbName: "emily_nodejs",
